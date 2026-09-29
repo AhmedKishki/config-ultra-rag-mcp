@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "config-ultra-rag-mcp"
+version = "0.1.0"
+description = "Layered file-backed settings for UltraRAG-derived MCP servers"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "platformdirs>=4.3,<5",
+]
+
+[project.urls]
+Repository = "https://github.com/AhmedKishki/config-ultra-rag-mcp"
+Issues = "https://github.com/AhmedKishki/config-ultra-rag-mcp/issues"
+"Upstream UltraRAG" = "https://github.com/OpenBMB/UltraRAG"
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff>=0.7.3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.uv]
+package = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
